@@ -1,3 +1,4 @@
+import { toGlobalURL } from "../settings.js";
 import { randomRange } from "../utility.js";
 import { Ball, DEFAULT_SPEED } from "./ball.js";
 import { Brick } from "./brick.js";
@@ -10,7 +11,7 @@ export class BallSpawnerBrick extends Brick {
         super()
         this.score = 100
         this.sprite = new Image()
-        this.sprite.src = './images/brick ball spawner.png'
+        this.sprite.src = toGlobalURL('/images/brick ball spawner.png')
     }
 
     breakBrick() {
