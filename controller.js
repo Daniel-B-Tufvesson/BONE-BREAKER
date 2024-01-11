@@ -23,6 +23,8 @@ export class Controller {
     onKeyDown(event) {
         if (this.debug) console.log('keydown: ', event.code)
         const gameState = this.engine.gameState
+        
+        event.preventDefault()
 
         // Handle space press to change game states.
         if (event.code === 'Space') {
@@ -56,10 +58,6 @@ export class Controller {
             // Launch held ball. 
             if (event.code === 'Space' && paddle.holdingBall !== null) {
                 paddle.launchBall()
-            }
-            
-            else if (event.code === 'Space') {
-                this.engine.balls = []
             }
         }
 
